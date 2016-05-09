@@ -1,0 +1,15 @@
+{
+  "name": "wpsparql",
+  "version": "0.9.0",
+  "description": "A wordpress plugin for querying data from an SPARQL endpoint into WP",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/byjg/PHP-SPARQL-Lib.git"
+    }
+  ],
+  "require": {
+    "analog/analog": "dev-master",
+    "twitter/typeahead.js": "dev-master"
+  }
+}
