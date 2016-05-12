@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'SparQL\\' => array($vendorDir . '/byjg/sparqllib/SparQL'),
+    'ByJG\\Util\\' => array($vendorDir . '/byjg/webrequest/src'),
 );

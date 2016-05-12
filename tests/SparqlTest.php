@@ -19,28 +19,48 @@ class SparqlTest extends PHPUnit_Framework_TestCase
   {
     // Connecting to invalid endpoint should fail
     $failed = false;
+    $alive = false;
     $db = new SparQL\Connection('invalid');
     try{
-      $db->alive(1000);
+      $alive = $db->alive(1000);
     }catch(Exception $e){
       $failed = true;
     }
 
     $this->assertTrue($failed);
+    $this->assertFalse($alive);
+  }
+
+  public function testInvalidUrlConnection()
+  {
+    // Connecting to invalid endpoint should fail
+    $failed = false;
+    $alive = false;
+    $db = new SparQL\Connection('http://rdf.ecs.soton.ac.uk/sparql/aaa');
+    try{
+      $alive = $db->alive(1000);
+    }catch(Exception $e){
+      $failed = true;
+    }
+
+    $this->assertFalse($failed);
+    $this->assertFalse($alive);
   }
 
   public function testValidConnection()
   {
     // Connecting to invalid endpoint should fail
     $failed = false;
+    $alive = false;
     $db = new SparQL\Connection('http://rdf.ecs.soton.ac.uk/sparql/');
     try{
-      $db->alive(1000);
+      $alive = $db->alive(1000);
     }catch(Exception $e){
       $failed = true;
     }
 
     $this->assertFalse($failed);
+    $this->assertTrue($alive);
   }
 
 }

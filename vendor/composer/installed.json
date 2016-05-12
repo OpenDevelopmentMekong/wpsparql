@@ -124,5 +124,88 @@
             "autocomplete",
             "typeahead"
         ]
+    },
+    {
+        "name": "byjg/webrequest",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/byjg/webrequest.git",
+            "reference": "7d20ccac99395d7aa3d2ebbde00fe1a22201cf48"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/byjg/webrequest/zipball/7d20ccac99395d7aa3d2ebbde00fe1a22201cf48",
+            "reference": "7d20ccac99395d7aa3d2ebbde00fe1a22201cf48",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.4.0"
+        },
+        "time": "2016-02-28 03:20:54",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "ByJG\\Util\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "João Gilberto Magalhães",
+                "email": "joao@byjg.com.br"
+            }
+        ],
+        "description": "A lightweight and highly customized CURL wrapper for making RESt calls and a wrapper for call dynamically SOAP requests."
+    },
+    {
+        "name": "byjg/sparqllib",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/byjg/PHP-SPARQL-Lib.git",
+            "reference": "8c451e6f55011027850888775281ebbaa636635f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/byjg/PHP-SPARQL-Lib/zipball/8c451e6f55011027850888775281ebbaa636635f",
+            "reference": "8c451e6f55011027850888775281ebbaa636635f",
+            "shasum": ""
+        },
+        "require": {
+            "byjg/webrequest": "1.0.*"
+        },
+        "time": "2016-05-11 00:40:31",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "SparQL\\": "SparQL/"
+            }
+        },
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "jg",
+                "email": "joao@byjg.com.br"
+            },
+            {
+                "name": "Christopher Gutteridge",
+                "email": "cjg@ecs.soton.ac.uk"
+            }
+        ],
+        "description": "Simple library to query SPARQL from PHP",
+        "support": {
+            "source": "https://github.com/byjg/PHP-SPARQL-Lib/tree/master"
+        }
     }
 ]

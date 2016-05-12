@@ -6,6 +6,8 @@
   define("FILTER_ONLY_WITH_RESOURCES","1");
   define("DEFAULT_LOG","/tmp/wpsparql.log");
 
+  require dirname(dirname(__FILE__)) . '/vendor/autoload.php';
+
   use Analog\Analog;
   use Analog\Handler;
 
@@ -426,13 +428,7 @@
   }
 
   function wpsparql_validate_settings_read(){
-    try{
-      wpsparql_api_ping();
-    }catch(Exception $e){
-      wpsparql_log($e->getMessage());
-      return false;
-    }
-    return true;
+    return wpsparql_api_ping();
   }
 
   function wpsparql_get_ckan_settings(){

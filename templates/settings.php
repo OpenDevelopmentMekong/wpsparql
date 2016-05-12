@@ -9,8 +9,9 @@
           $sparql_url = get_option('setting_sparql_url');
           $logging_path = get_option('setting_log_path');
           $logging_enabled = get_option('setting_log_enabled');
-          if (!$logging_path)
+          if (!$logging_path){
             $logging_path = DEFAULT_LOG;
+          }
           $valid_connection_read = wpsparql_validate_settings_read();
           update_option('setting_sparql_valid_settings_read',$valid_connection_read);
         ?>

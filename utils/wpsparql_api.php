@@ -1,7 +1,8 @@
 <?php
 
   include_once plugin_dir_path( __FILE__ ) . 'wpsparql_utils.php' ;
-  use Silex\ckan\CkanClient;
+
+  require dirname(dirname(__FILE__)) . '/vendor/autoload.php';
 
   /*
   * Api
@@ -27,7 +28,20 @@
 
   function wpsparql_api_ping() {
 
-    return true;
+    $endpoint = get_option('setting_sparql_url');
+
+    // Connecting to invalid endpoint should fail
+    $alive = true;
+    $db = new SparQL\Connection($endpoint);
+    wpsparql_log($endpoint);
+    try{
+      $alive = $db->alive(1000);
+    }catch(Exception $e){
+      wpsparql_log($e->getMessage());
+      $alive = false;
+    }
+
+    return $alive;
 
   }
 

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2b2f41ca5b758fd677a789488b6bad6e",
-    "content-hash": "27ff62437ea1155cbd6b7efb5af33445",
+    "hash": "e92d32ae45d8d1af56093a5512c35abf",
+    "content-hash": "a829e669a12f7b7bf3dd1ffb94c59971",
     "packages": [
         {
             "name": "analog/analog",
@@ -55,6 +55,85 @@
                 "syslog"
             ],
             "time": "2016-03-29 14:54:49"
+        },
+        {
+            "name": "byjg/sparqllib",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/byjg/PHP-SPARQL-Lib.git",
+                "reference": "8c451e6f55011027850888775281ebbaa636635f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/byjg/PHP-SPARQL-Lib/zipball/8c451e6f55011027850888775281ebbaa636635f",
+                "reference": "8c451e6f55011027850888775281ebbaa636635f",
+                "shasum": ""
+            },
+            "require": {
+                "byjg/webrequest": "1.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SparQL\\": "SparQL/"
+                }
+            },
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "jg",
+                    "email": "joao@byjg.com.br"
+                },
+                {
+                    "name": "Christopher Gutteridge",
+                    "email": "cjg@ecs.soton.ac.uk"
+                }
+            ],
+            "description": "Simple library to query SPARQL from PHP",
+            "support": {
+                "source": "https://github.com/byjg/PHP-SPARQL-Lib/tree/master"
+            },
+            "time": "2016-05-11 00:40:31"
+        },
+        {
+            "name": "byjg/webrequest",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/byjg/webrequest.git",
+                "reference": "7d20ccac99395d7aa3d2ebbde00fe1a22201cf48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/byjg/webrequest/zipball/7d20ccac99395d7aa3d2ebbde00fe1a22201cf48",
+                "reference": "7d20ccac99395d7aa3d2ebbde00fe1a22201cf48",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ByJG\\Util\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "João Gilberto Magalhães",
+                    "email": "joao@byjg.com.br"
+                }
+            ],
+            "description": "A lightweight and highly customized CURL wrapper for making RESt calls and a wrapper for call dynamically SOAP requests.",
+            "time": "2016-02-28 03:20:54"
         },
         {
             "name": "psr/log",
@@ -133,7 +212,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "analog/analog": 20,
-        "twitter/typeahead.js": 20
+        "twitter/typeahead.js": 20,
+        "byjg/sparqllib": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
