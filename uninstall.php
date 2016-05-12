@@ -8,9 +8,9 @@
   delete_site_option( 'setting_ckan_api' );
  }
 
- if ( get_option( 'setting_ckan_url' ) != false ) {
-  delete_option( 'setting_ckan_url' );
-  delete_site_option( 'setting_ckan_url' );
+ if ( get_option( 'setting_sparql_url' ) != false ) {
+  delete_option( 'setting_sparql_url' );
+  delete_site_option( 'setting_sparql_url' );
  }
 
  if ( get_option( 'setting_log_enabled' ) != false ) {

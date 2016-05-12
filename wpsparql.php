@@ -157,7 +157,7 @@ if(!class_exists('wpsparql'))
          */
         public function init_settings()
         {
-            register_setting('wpsparql-group', 'setting_ckan_url' , 'wpsparql_sanitize_url');
+            register_setting('wpsparql-group', 'setting_sparql_url' , 'wpsparql_sanitize_url');
             register_setting('wpsparql-group', 'setting_ckan_api');
             register_setting('wpsparql-group', 'setting_ckan_organization');
             register_setting('wpsparql-group', 'setting_ckan_group');

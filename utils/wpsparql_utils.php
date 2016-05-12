@@ -280,7 +280,7 @@
   function wpsparql_get_link_to_dataset($dataset_name){
     wpsparql_log("wpsparql_get_link_to_dataset "  . print_r($dataset_name,true));
 
-    return get_option('setting_ckan_url') . "/dataset/" . $dataset_name;
+    return get_option('setting_sparql_url') . "/dataset/" . $dataset_name;
   }
 
   function wpsparql_get_link_to_resource($dataset_name,$resource_id){
@@ -394,7 +394,7 @@
   }
 
   function wpsparql_get_complete_url_for_dataset($dataset){
-    return get_option('setting_ckan_url') . "/dataset/" . $dataset["name"];
+    return get_option('setting_sparql_url') . "/dataset/" . $dataset["name"];
   }
 
   function wpsparql_get_group_names_for_user(){
@@ -435,14 +435,10 @@
     return true;
   }
 
-  function wpsparql_validate_settings_write(){
-    return !wpsparql_is_null_or_empty_string(get_option('setting_ckan_api'));
-  }
-
   function wpsparql_get_ckan_settings(){
 
     $settings = array(
-      'baseUrl' => get_option('setting_ckan_url') . "/api/",
+      'baseUrl' => get_option('setting_sparql_url') . "/api/",
       'scheme' => 'http',
       'apiKey' => get_option('setting_ckan_api')
     );
