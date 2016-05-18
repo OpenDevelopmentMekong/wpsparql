@@ -16,7 +16,24 @@
 
   function wpsparql_api_query_datasets($atts) {
 
-    return [];
+    if (!isset($atts['query']))
+      wpsparql_api_call_error("wpsparql_api_query_datasets",null);
+
+    $endpoint = get_option('setting_sparql_url');
+
+    // Connecting to invalid endpoint should fail
+    $result;
+    $db = new SparQL\Connection($endpoint);
+    wpsparql_log($endpoint);
+    try{
+      $result = $db->query($atts['query']);
+    }catch(Exception $e){
+      wpsparql_log($e->getMessage());
+    }
+    
+    $fields = $result->fieldArray();
+
+    return $fields;
 
   }
 

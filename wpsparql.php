@@ -72,7 +72,7 @@ if(!class_exists('wpsparql'))
 
           $post_types = apply_filters('wpsparql_filter_post_types', get_post_types());
           if (in_array( $post_type, $post_types ) && wpsparql_is_supported_post_type($post_type)) {
-           add_meta_box('wpsparql_add_related_datasets',__( 'Add related CKAN content', 'wpsparql_add_related_datasets_title' ),array(&$this, 'wpsparql_render_dataset_meta_box'),$post_type,'side','high');
+           add_meta_box('wpsparql_add_related_datasets',__( 'Add related SPARQL content', 'wpsparql_add_related_datasets_title' ),array(&$this, 'wpsparql_render_dataset_meta_box'),$post_type,'side','high');
           }
 
           wp_register_script( 'wpsparql_bloodhound', plugins_url( 'wpsparql/vendor/twitter/typeahead.js/dist/bloodhound.min.js'), array('jquery') );

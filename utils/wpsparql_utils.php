@@ -220,52 +220,68 @@
   function wpsparql_show_query_datasets($atts) {
     wpsparql_log("wpsparql_show_query_datasets "  . print_r($atts,true));
 
-    $dataset_array = array();
+    if (!isset($atts['query']))
+      wpsparql_api_call_error("wpsparql_show_query_datasets",null);
+
+    $result;
     try{
       $result = wpsparql_api_query_datasets($atts);
-      $dataset_array = $result["results"];
-      $atts["count"] = $result["count"];
     }catch(Exception $e){
       wpsparql_log($e->getMessage());
     }
 
-    $filter = WPSPARQL_FILTER_ALL;
-    if (array_key_exists("filter",$atts)){
-      $filter = $atts["filter"];
-    }
-
-    $filter_fields_json = NULL;
-    if (array_key_exists("filter_fields",$atts)){
-      $filter_fields_json = json_decode($atts["filter_fields"],true);
-    }
-
-    $blank_on_empty = false;
-    if (array_key_exists("blank_on_empty",$atts)){
-      $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
-    }
-
-    $filtered_dataset_array = array();
-    foreach ($dataset_array as $dataset){
-     if ($filter == WPSPARQL_FILTER_ALL || (($filter == WPSPARQL_FILTER_ONLY_WITH_RESOURCES) && wpsparql_dataset_has_resources($dataset))){
-      if (wpsparql_is_null($filter_fields_json) || (!wpsparql_is_null($filter_fields_json) && wpsparql_dataset_has_matching_extras($dataset,$filter_fields_json))){
-       array_push($filtered_dataset_array,$dataset);
-      }
-     }
-    }
-
-    if ((count($dataset_array) == 0) && $blank_on_empty)
-      return "";
-
-    if (array_key_exists("format",$atts)){
-      if ($atts["format"]=="json") {
-        $json= wpsparql_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list_format_json.php',$filtered_dataset_array,$atts);
-        return $json;
-      }
-    }
-    else{
-      return wpsparql_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$filtered_dataset_array,$atts);
-    }
+    return wpsparql_output_template( plugin_dir_path( __FILE__ ) . '../templates/triples_list.php',$result,$atts);
   }
+
+  // function wpsparql_show_query_datasets($atts) {
+  //   wpsparql_log("wpsparql_show_query_datasets "  . print_r($atts,true));
+  //
+  //   $dataset_array = array();
+  //   try{
+  //     $result = wpsparql_api_query_datasets($atts);
+  //     $dataset_array = $result["results"];
+  //     $atts["count"] = $result["count"];
+  //   }catch(Exception $e){
+  //     wpsparql_log($e->getMessage());
+  //   }
+  //
+  //   $filter = WPSPARQL_FILTER_ALL;
+  //   if (array_key_exists("filter",$atts)){
+  //     $filter = $atts["filter"];
+  //   }
+  //
+  //   $filter_fields_json = NULL;
+  //   if (array_key_exists("filter_fields",$atts)){
+  //     $filter_fields_json = json_decode($atts["filter_fields"],true);
+  //   }
+  //
+  //   $blank_on_empty = false;
+  //   if (array_key_exists("blank_on_empty",$atts)){
+  //     $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
+  //   }
+  //
+  //   $filtered_dataset_array = array();
+  //   foreach ($dataset_array as $dataset){
+  //    if ($filter == WPSPARQL_FILTER_ALL || (($filter == WPSPARQL_FILTER_ONLY_WITH_RESOURCES) && wpsparql_dataset_has_resources($dataset))){
+  //     if (wpsparql_is_null($filter_fields_json) || (!wpsparql_is_null($filter_fields_json) && wpsparql_dataset_has_matching_extras($dataset,$filter_fields_json))){
+  //      array_push($filtered_dataset_array,$dataset);
+  //     }
+  //    }
+  //   }
+  //
+  //   if ((count($dataset_array) == 0) && $blank_on_empty)
+  //     return "";
+  //
+  //   if (array_key_exists("format",$atts)){
+  //     if ($atts["format"]=="json") {
+  //       $json= wpsparql_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list_format_json.php',$filtered_dataset_array,$atts);
+  //       return $json;
+  //     }
+  //   }
+  //   else{
+  //     return wpsparql_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$filtered_dataset_array,$atts);
+  //   }
+  // }
 
   /*
   * Templates
