@@ -1,7 +1,7 @@
 <?php
 
-class ApiParametersException extends Exception { }
-class ApiCallException extends Exception { }
-class ApiSettingsException extends Exception { }
+class WpsparqlApiParametersException extends Exception { }
+class WpsparqlApiCallException extends Exception { }
+class WpsparqlApiSettingsException extends Exception { }
 
 ?>

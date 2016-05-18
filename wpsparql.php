@@ -210,7 +210,7 @@ if(class_exists('wpsparql'))
     if(isset($wpsparql))
     {
         // Add the settings link to the plugins page
-        function plugin_settings_link($links)
+        function wpsparql_plugin_settings_link($links)
         {
             $settings_link = '<a href="options-general.php?page=wpsparql">Settings</a>';
             array_unshift($links, $settings_link);
@@ -218,7 +218,7 @@ if(class_exists('wpsparql'))
         }
 
         $plugin = plugin_basename(__FILE__);
-        add_filter("plugin_action_links_$plugin", 'plugin_settings_link');
+        add_filter("plugin_action_links_$plugin", 'wpsparql_plugin_settings_link');
     }
 }
 

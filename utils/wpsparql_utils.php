@@ -1,10 +1,10 @@
 <?php
 
-  define("FREQ_NEVER","0");
-  define("FREQ_POST_SAVED","1");
-  define("FILTER_ALL","0");
-  define("FILTER_ONLY_WITH_RESOURCES","1");
-  define("DEFAULT_LOG","/tmp/wpsparql.log");
+  define("WPSPARQL_FREQ_NEVER","0");
+  define("WPSPARQL_FREQ_POST_SAVED","1");
+  define("WPSPARQL_FILTER_ALL","0");
+  define("WPSPARQL_FILTER_ONLY_WITH_RESOURCES","1");
+  define("WPSPARQL_DEFAULT_LOG","/tmp/wpsparql.log");
 
   require dirname(dirname(__FILE__)) . '/vendor/autoload.php';
 
@@ -57,7 +57,7 @@
       $page = (int)($atts["page"]);
     }
 
-    $filter = FILTER_ALL;
+    $filter = WPSPARQL_FILTER_ALL;
     if (array_key_exists("filter",$atts)){
       $filter = $atts["filter"];
     }
@@ -113,7 +113,7 @@
        if ($qualifies_organization && $qualifies_group){
          $dataset_atts = array("id" => $dataset["dataset_id"]);
          try{
-           if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpsparql_dataset_has_resources($dataset))){
+           if ($filter == WPSPARQL_FILTER_ALL || (($filter == WPSPARQL_FILTER_ONLY_WITH_RESOURCES) && wpsparql_dataset_has_resources($dataset))){
             if (wpsparql_is_null($filter_fields_json) || (!wpsparql_is_null($filter_fields_json) && wpsparql_dataset_has_matching_extras($dataset,$filter_fields_json))){
              array_push($dataset_array,wpsparql_api_get_dataset($dataset_atts));
             }
@@ -146,7 +146,7 @@
       $filter_organization = $atts["organization"];
     }
 
-    $filter = FILTER_ALL;
+    $filter = WPSPARQL_FILTER_ALL;
     if (array_key_exists("filter",$atts)){
       $filter = $atts["filter"];
     }
@@ -199,7 +199,7 @@
       if ($qualifies_organization && $qualifies_group){
         $dataset_atts = array("id" => $dataset["dataset_id"]);
         try{
-         if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpsparql_dataset_has_resources($dataset))){
+         if ($filter == WPSPARQL_FILTER_ALL || (($filter == WPSPARQL_FILTER_ONLY_WITH_RESOURCES) && wpsparql_dataset_has_resources($dataset))){
           if (wpsparql_is_null($filter_fields_json) || (!wpsparql_is_null($filter_fields_json) && wpsparql_dataset_has_matching_extras($dataset,$filter_fields_json))){
            array_push($dataset_array,$dataset_atts);
           }
@@ -229,7 +229,7 @@
       wpsparql_log($e->getMessage());
     }
 
-    $filter = FILTER_ALL;
+    $filter = WPSPARQL_FILTER_ALL;
     if (array_key_exists("filter",$atts)){
       $filter = $atts["filter"];
     }
@@ -246,7 +246,7 @@
 
     $filtered_dataset_array = array();
     foreach ($dataset_array as $dataset){
-     if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpsparql_dataset_has_resources($dataset))){
+     if ($filter == WPSPARQL_FILTER_ALL || (($filter == WPSPARQL_FILTER_ONLY_WITH_RESOURCES) && wpsparql_dataset_has_resources($dataset))){
       if (wpsparql_is_null($filter_fields_json) || (!wpsparql_is_null($filter_fields_json) && wpsparql_dataset_has_matching_extras($dataset,$filter_fields_json))){
        array_push($filtered_dataset_array,$dataset);
       }
@@ -304,7 +304,7 @@
     if (!wpsparql_is_null_or_empty_string(get_option('setting_log_path')))
       Analog::handler(Handler\File::init (get_option('setting_log_path')));
     else
-      Analog::handler(Handler\File::init (DEFAULT_LOG));
+      Analog::handler(Handler\File::init (WPSPARQL_DEFAULT_LOG));
 
     Analog::log ( "[ " . $caller['file'] . " | " . $caller['line'] . " ] " . $text );
   }
