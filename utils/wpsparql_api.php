@@ -19,7 +19,7 @@
     if (!isset($atts['query']))
       wpsparql_api_call_error("wpsparql_api_query_datasets",null);
 
-    $endpoint = get_option('setting_sparql_url');
+    $endpoint = get_option('wpsparql_setting_sparql_url');
 
     // Connecting to invalid endpoint should fail
     $result;
@@ -30,7 +30,7 @@
     }catch(Exception $e){
       wpsparql_log($e->getMessage());
     }
-    
+
     $fields = $result->fieldArray();
 
     return $fields;
@@ -45,7 +45,7 @@
 
   function wpsparql_api_ping() {
 
-    $endpoint = get_option('setting_sparql_url');
+    $endpoint = get_option('wpsparql_setting_sparql_url');
 
     // Connecting to invalid endpoint should fail
     $alive = true;

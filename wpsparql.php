@@ -157,17 +157,13 @@ if(!class_exists('wpsparql'))
          */
         public function init_settings()
         {
-            register_setting('wpsparql-group', 'setting_sparql_url' , 'wpsparql_sanitize_url');
-            register_setting('wpsparql-group', 'setting_ckan_api');
-            register_setting('wpsparql-group', 'setting_ckan_organization');
-            register_setting('wpsparql-group', 'setting_ckan_group');
-            register_setting('wpsparql-group', 'setting_ckan_valid_settings_read');
-            register_setting('wpsparql-group', 'setting_ckan_valid_settings_write');
-            register_setting('wpsparql-group', 'setting_log_path');
-            register_setting('wpsparql-group', 'setting_log_enabled');
+            register_setting('wpsparql-group', 'wpsparql_setting_sparql_url' , 'wpsparql_sanitize_url');
+            register_setting('wpsparql-group', 'wpsparql_setting_log_path');
+            register_setting('wpsparql-group', 'wpsparql_setting_log_enabled');
+            register_setting('wpsparql-group', 'wpsparql_supported_namespaces');
 
             foreach (get_post_types() as $post_type){
-             $settings_name =  "setting_supported_post_types_" . $post_type;
+             $settings_name =  "wpsparql_setting_supported_post_types_" . $post_type;
              register_setting('wpsparql-group', $settings_name);
             }
         }
@@ -189,6 +185,9 @@ if(!class_exists('wpsparql'))
             {
                 wp_die(__('You do not have sufficient permissions to access this page.'));
             }
+
+            wp_register_script( 'wpsparql_js', plugins_url( 'wpsparql/js/wpsparql_settings_logic.js'), array('jquery') );
+            wp_enqueue_script( 'wpsparql_js');
 
             include(sprintf("%s/templates/settings.php", dirname(__FILE__)));
         }

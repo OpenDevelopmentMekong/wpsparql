@@ -298,7 +298,7 @@
   function wpsparql_get_link_to_dataset($dataset_name){
     wpsparql_log("wpsparql_get_link_to_dataset "  . print_r($dataset_name,true));
 
-    return get_option('setting_sparql_url') . "/dataset/" . $dataset_name;
+    return get_option('wpsparql_setting_sparql_url') . "/dataset/" . $dataset_name;
   }
 
   function wpsparql_get_link_to_resource($dataset_name,$resource_id){
@@ -312,13 +312,13 @@
   */
 
   function wpsparql_log($text) {
-    if (!get_option('setting_log_enabled')) return;
+    if (!get_option('wpsparql_setting_log_enabled')) return;
 
     $bt = debug_backtrace();
     $caller = array_shift($bt);
 
-    if (!wpsparql_is_null_or_empty_string(get_option('setting_log_path')))
-      Analog::handler(Handler\File::init (get_option('setting_log_path')));
+    if (!wpsparql_is_null_or_empty_string(get_option('wpsparql_setting_log_path')))
+      Analog::handler(Handler\File::init (get_option('wpsparql_setting_log_path')));
     else
       Analog::handler(Handler\File::init (WPSPARQL_DEFAULT_LOG));
 
@@ -330,7 +330,7 @@
   */
 
   function wpsparql_is_supported_post_type($post_type){
-   $settings_name =  "setting_supported_post_types_" . $post_type;
+   $settings_name =  "wpsparql_setting_supported_post_types_" . $post_type;
    return get_option($settings_name);
   }
 
@@ -412,7 +412,7 @@
   }
 
   function wpsparql_get_complete_url_for_dataset($dataset){
-    return get_option('setting_sparql_url') . "/dataset/" . $dataset["name"];
+    return get_option('wpsparql_setting_sparql_url') . "/dataset/" . $dataset["name"];
   }
 
   function wpsparql_get_group_names_for_user(){
@@ -445,17 +445,6 @@
 
   function wpsparql_validate_settings_read(){
     return wpsparql_api_ping();
-  }
-
-  function wpsparql_get_ckan_settings(){
-
-    $settings = array(
-      'baseUrl' => get_option('setting_sparql_url') . "/api/",
-      'scheme' => 'http',
-      'apiKey' => get_option('setting_ckan_api')
-    );
-
-    return $settings;
   }
 
   function wpsparql_sanitize_url($input) {
@@ -508,6 +497,5 @@
      return $ext;
     return 'html';
   }
-
 
 ?>
