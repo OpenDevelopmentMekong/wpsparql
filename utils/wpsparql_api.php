@@ -20,18 +20,21 @@
       wpsparql_api_call_error("wpsparql_api_query_datasets",null);
 
     $endpoint = get_option('wpsparql_setting_sparql_url');
-
-    // Connecting to invalid endpoint should fail
-    $result;
     $db = new SparQL\Connection($endpoint);
-    wpsparql_log($endpoint);
+
+    $supported_namespaces = json_decode(get_option('wpsparql_supported_namespaces'),true);
+
+    foreach ($supported_namespaces as $namespace) {
+      $db->ns( $namespace["prefix"],$namespace["iri"] );
+    }
+
+    $fields = null;
     try{
       $result = $db->query($atts['query']);
+      $fields = $result->fetchAll();
     }catch(Exception $e){
       wpsparql_log($e->getMessage());
     }
-
-    $fields = $result->fieldArray();
 
     return $fields;
 

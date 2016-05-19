@@ -3,7 +3,7 @@ wp-sparql
 
 # DISCLAIMER: WIP!!!! Not production ready yet!!!!!!
 
-A wordpress plugin for querying data from an SPARQL endpoint into WP http://wordpress.org/.
+A wordpress plugin for querying data from a SPARQL endpoint and present results on WP http://wordpress.org/.
 
 # Description
 
@@ -29,12 +29,40 @@ TBD
 
 ## Feature 2: Query SPARQL endpoint
 
-TBD
+wpsparql exposes the shortcode **[wpsparql_query_datasets query="QUERY"]** which can be used to generate a query and present the results returned by the endpoint.
+
+The shortcode has following parameters:
+
+* **query**: (Mandatory) Term to query the database.
+
+Examples:
+```php
+[wpckan_query_datasets query="SELECT * WHERE { ?person a foaf:Person . ?person foaf:name ?name } LIMIT 1"]
+```
+
+```html
+<table class="wpsparql_result_list">
+  <tr>
+    <th>person</th>
+    <th>name</th>
+  </tr>
+  <tr>
+    <td>some_url</td>
+    <td>some_name</td>
+  </tr>
+</table>  
 
 # Installation
 
 1. Either download the files as zip or clone recursively (contains submodules) <code>git clone https://github.com/OpenDevelopmentMekong/wpsparql.git --recursive</code> into the Wordpress plugins folder.
 2. Activate the plugin through the 'Plugins' menu in WordPress
+
+# Configuration
+
+1. Go to plugin settings
+2. Specify the URl of the sparql endpoint
+3. Add the namespaces you want to support in your queries.
+4. Save settings
 
 # Development
 

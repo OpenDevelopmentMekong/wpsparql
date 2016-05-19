@@ -230,7 +230,7 @@
       wpsparql_log($e->getMessage());
     }
 
-    return wpsparql_output_template( plugin_dir_path( __FILE__ ) . '../templates/triples_list.php',$result,$atts);
+    return wpsparql_output_template( plugin_dir_path( __FILE__ ) . '../templates/result_list.php',$result,$atts);
   }
 
   // function wpsparql_show_query_datasets($atts) {
