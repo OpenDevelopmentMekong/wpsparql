@@ -44,7 +44,8 @@ Examples:
     <td>some_url</td>
     <td>some_name</td>
   </tr>
-</table>  
+</table>
+``` 
 
 ### Widget
 
