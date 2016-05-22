@@ -23,11 +23,7 @@ This plugin is based on http://github.com/OpenDevelopmentMekong/wpckan/, a wordp
 
 # Features
 
-## Feature 1: Add related SPARQL datasets to posts.
-
-TBD
-
-## Feature 2: Query SPARQL endpoint
+## Feature 1: Query SPARQL endpoint
 
 wpsparql exposes the shortcode **[wpsparql_query_endpoint query="QUERY"]** which can be used to generate a query and present the results returned by the endpoint.
 

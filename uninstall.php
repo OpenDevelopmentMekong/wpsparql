@@ -3,11 +3,6 @@
  if ( !defined( 'WP_UNINSTALL_PLUGIN' ) )
   exit;
 
- if ( get_option( 'setting_ckan_api' ) != false ) {
-  delete_option( 'setting_ckan_api' );
-  delete_site_option( 'setting_ckan_api' );
- }
-
  if ( get_option( 'wpsparql_setting_sparql_url' ) != false ) {
   delete_option( 'wpsparql_setting_sparql_url' );
   delete_site_option( 'wpsparql_setting_sparql_url' );
@@ -21,6 +16,11 @@
  if ( get_option( 'wpsparql_setting_log_path' ) != false ) {
   delete_option( 'wpsparql_setting_log_path' );
   delete_site_option( 'wpsparql_setting_log_path' );
+ }
+
+ if ( get_option( 'wpsparql_supported_namespaces' ) != false ) {
+  delete_option( 'wpsparql_supported_namespaces' );
+  delete_site_option( 'wpsparql_supported_namespaces' );
  }
 
  foreach (get_post_types() as $post_type) {
