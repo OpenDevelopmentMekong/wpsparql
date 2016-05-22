@@ -10,6 +10,7 @@
  */
 
  require 'vendor/autoload.php';
+ include_once plugin_dir_path( __FILE__ ) . 'utils/query-endpoint-widget.php' ;
  include_once plugin_dir_path( __FILE__ ) . 'utils/wpsparql_exceptions.php' ;
  include_once plugin_dir_path( __FILE__ ) . 'utils/wpsparql_utils.php' ;
  include_once plugin_dir_path( __FILE__ ) . 'utils/wpsparql_api.php' ;
@@ -28,6 +29,7 @@ if(!class_exists('wpsparql'))
           add_action('admin_enqueue_scripts', array( &$this, 'wpsparql_register_plugin_styles' ) );
           add_action('edit_post', array(&$this, 'wpsparql_edit_post'));
           add_action('save_post', array(&$this, 'wpsparql_save_post'));
+          add_action( 'widgets_init', create_function('', 'register_widget("Wpsparql_Query_Endpoint_Widget");'));
           #add_action('add_meta_boxes', array(&$this, 'wpsparql_add_meta_boxes'));
           add_shortcode('wpsparql_related_datasets', array(&$this, 'wpsparql_do_shortcode_get_related_datasets'));
           add_shortcode('wpsparql_number_of_related_datasets', array(&$this, 'wpsparql_do_shortcode_get_number_of_related_datasets'));
