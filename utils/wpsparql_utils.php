@@ -377,7 +377,7 @@
   {
     global $post;
     $pattern = get_shortcode_regex();
-    $shortcodes = array("wpsparql_related_datasets","wpsparql_number_of_related_datasets","wpsparql_query_datasets");
+    $shortcodes = array("wpsparql_related_datasets","wpsparql_number_of_related_datasets","wpsparql_query_endpoint");
 
     foreach($shortcodes as $shortcode){
       if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
@@ -396,7 +396,7 @@
   {
     global $post;
     $pattern = get_shortcode_regex();
-    $shortcodes = array("wpsparql_related_datasets","wpsparql_number_of_related_datasets","wpsparql_query_datasets");
+    $shortcodes = array("wpsparql_related_datasets","wpsparql_number_of_related_datasets","wpsparql_query_endpoint");
 
     foreach($shortcodes as $shortcode){
       if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )

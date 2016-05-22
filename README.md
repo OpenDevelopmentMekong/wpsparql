@@ -29,7 +29,7 @@ TBD
 
 ## Feature 2: Query SPARQL endpoint
 
-wpsparql exposes the shortcode **[wpsparql_query_datasets query="QUERY"]** which can be used to generate a query and present the results returned by the endpoint.
+wpsparql exposes the shortcode **[wpsparql_query_endpoint query="QUERY"]** which can be used to generate a query and present the results returned by the endpoint.
 
 The shortcode has following parameters:
 
@@ -37,7 +37,7 @@ The shortcode has following parameters:
 
 Examples:
 ```php
-[wpckan_query_datasets query="SELECT * WHERE { ?person a foaf:Person . ?person foaf:name ?name } LIMIT 1"]
+[wpsparql_query_endpoint query="SELECT * WHERE { ?person a foaf:Person . ?person foaf:name ?name } LIMIT 1"]
 ```
 
 ```html

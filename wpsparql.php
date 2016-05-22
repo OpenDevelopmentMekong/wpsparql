@@ -28,10 +28,10 @@ if(!class_exists('wpsparql'))
           add_action('admin_enqueue_scripts', array( &$this, 'wpsparql_register_plugin_styles' ) );
           add_action('edit_post', array(&$this, 'wpsparql_edit_post'));
           add_action('save_post', array(&$this, 'wpsparql_save_post'));
-          add_action('add_meta_boxes', array(&$this, 'wpsparql_add_meta_boxes'));
+          #add_action('add_meta_boxes', array(&$this, 'wpsparql_add_meta_boxes'));
           add_shortcode('wpsparql_related_datasets', array(&$this, 'wpsparql_do_shortcode_get_related_datasets'));
           add_shortcode('wpsparql_number_of_related_datasets', array(&$this, 'wpsparql_do_shortcode_get_number_of_related_datasets'));
-          add_shortcode('wpsparql_query_datasets', array(&$this, 'wpsparql_do_shortcode_query_datasets'));
+          add_shortcode('wpsparql_query_endpoint', array(&$this, 'wpsparql_do_shortcode_query_datasets'));
         }
 
         public function wpsparql_register_plugin_styles($hook) {
