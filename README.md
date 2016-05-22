@@ -1,13 +1,11 @@
 wp-sparql
 =======
 
-# DISCLAIMER: WIP!!!! Not production ready yet!!!!!!
-
-A wordpress plugin for querying data from a SPARQL endpoint and present results on WP http://wordpress.org/.
+A wordpress plug-in for querying data from a SPARQL endpoint and present results on WP http://wordpress.org/.
 
 # Description
 
-wpsparql is a wordpress plugin that exposes a series of functionalities to bring content exposed by an sparql endpoint to Wordpress' UI.
+wpsparql is a wordpress plug-in that exposes a series of functionalities to bring content exposed by an sparql endpoint to Wordpress' UI.
 
 # What is sparql?
 
@@ -19,7 +17,7 @@ SPARQL endpoints are services that accept SPARQL queries and return results.
 
 # This plugin is based on wpckan
 
-This plugin is based on http://github.com/OpenDevelopmentMekong/wpckan/, a wordpress plugin exposing functionality to pull and present data exposed by a CKAN instance. More about CKAN on http://ckan.org/.
+This plug-in is based on http://github.com/OpenDevelopmentMekong/wpckan/, a wordpress plug-in exposing functionality to pull and present data exposed by a CKAN instance. More about CKAN on http://ckan.org/.
 
 # Features
 
@@ -48,14 +46,18 @@ Examples:
   </tr>
 </table>  
 
+### Widget
+
+This feature also exposes a widget for integrating the results of queries easily into Wordpress sidebars. Just add the **WPSPARQL query endpoint** widget available under **Appearance > Widgets** to any widget area and configure the query you want to execute.
+
 # Installation
 
-1. Either download the files as zip or clone recursively (contains submodules) <code>git clone https://github.com/OpenDevelopmentMekong/wpsparql.git --recursive</code> into the Wordpress plugins folder.
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Either download the files as zip or clone recursively (contains submodules) <code>git clone https://github.com/OpenDevelopmentMekong/wpsparql.git --recursive</code> into the Wordpress plug-ins folder.
+2. Activate the plug-in through the 'Plug-ins' menu in WordPress
 
 # Configuration
 
-1. Go to plugin settings
+1. Go to plug-in settings
 2. Specify the URl of the sparql endpoint
 3. Add the namespaces you want to support in your queries.
 4. Save settings
@@ -73,7 +75,7 @@ Examples:
 
 # Uses
 
-*
+* https://github.com/byjg/PHP-SPARQL-Lib.git
 
 # Copyright and License
 
