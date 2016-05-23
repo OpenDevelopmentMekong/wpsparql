@@ -16,19 +16,33 @@
 
   function wpsparql_api_query_datasets($atts) {
 
-    return [];
+    if (!isset($atts['query']))
+      wpsparql_api_call_error("wpsparql_api_query_datasets",null);
 
-  }
+    $endpoint = get_option('wpsparql_setting_sparql_url');
+    $db = new SparQL\Connection($endpoint);
 
-  function wpsparql_api_search_package_with_id($id){
+    $supported_namespaces = json_decode(get_option('wpsparql_supported_namespaces'),true);
 
-    return [];
+    foreach ($supported_namespaces as $namespace) {
+      $db->ns( $namespace["prefix"],$namespace["iri"] );
+    }
+
+    $fields = null;
+    try{
+      $result = $db->query($atts['query']);
+      $fields = $result->fetchAll();
+    }catch(Exception $e){
+      wpsparql_log($e->getMessage());
+    }
+
+    return $fields;
 
   }
 
   function wpsparql_api_ping() {
 
-    $endpoint = get_option('setting_sparql_url');
+    $endpoint = get_option('wpsparql_setting_sparql_url');
 
     // Connecting to invalid endpoint should fail
     $alive = true;
@@ -42,12 +56,6 @@
     }
 
     return $alive;
-
-  }
-
-  function wpsparql_api_status_show() {
-
-    return [];
 
   }
 

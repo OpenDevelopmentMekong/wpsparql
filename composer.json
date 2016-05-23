@@ -10,7 +10,6 @@
   ],
   "require": {
     "analog/analog": "dev-master",
-    "twitter/typeahead.js": "dev-master",
     "byjg/sparqllib": "dev-master"
   }
 }
