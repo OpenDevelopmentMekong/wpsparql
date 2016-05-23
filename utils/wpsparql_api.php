@@ -40,12 +40,6 @@
 
   }
 
-  function wpsparql_api_search_package_with_id($id){
-
-    return [];
-
-  }
-
   function wpsparql_api_ping() {
 
     $endpoint = get_option('wpsparql_setting_sparql_url');
@@ -62,12 +56,6 @@
     }
 
     return $alive;
-
-  }
-
-  function wpsparql_api_status_show() {
-
-    return [];
 
   }
 
