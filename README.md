@@ -45,7 +45,7 @@ Examples:
     <td>some_name</td>
   </tr>
 </table>
-``` 
+```
 
 ### Widget
 
@@ -53,8 +53,9 @@ This feature also exposes a widget for integrating the results of queries easily
 
 # Installation
 
-1. Either download the files as zip or clone recursively (contains submodules) <code>git clone https://github.com/OpenDevelopmentMekong/wpsparql.git --recursive</code> into the Wordpress plug-ins folder.
-2. Activate the plug-in through the 'Plug-ins' menu in WordPress
+1. Either download the files as zip or clone <code>git clone https://github.com/OpenDevelopmentMekong/wpsparql.git</code> into the Wordpress plug-ins folder.
+2. Install dependencies with composer (http://getcomposer.org) <code>composer install</code>
+3. Activate the plugin through the 'Plugins' menu in WordPress
 
 # Configuration
 
