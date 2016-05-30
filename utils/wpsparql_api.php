@@ -2,7 +2,7 @@
 
   include_once plugin_dir_path( __FILE__ ) . 'wpsparql_utils.php' ;
 
-  require dirname(dirname(__FILE__)) . '/vendor/autoload.php';
+  require_once dirname(dirname(__FILE__)) . '/vendor/autoload.php';
 
   /*
   * Api

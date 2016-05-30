@@ -6,7 +6,7 @@
   define("WPSPARQL_FILTER_ONLY_WITH_RESOURCES","1");
   define("WPSPARQL_DEFAULT_LOG","/tmp/wpsparql.log");
 
-  require dirname(dirname(__FILE__)) . '/vendor/autoload.php';
+  require_once dirname(dirname(__FILE__)) . '/vendor/autoload.php';
 
   use Analog\Analog;
   use Analog\Handler;
