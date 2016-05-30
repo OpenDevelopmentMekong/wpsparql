@@ -16,7 +16,14 @@ foreach( $data as $row )
   foreach( $data->getFields() as $field )
   {
     print "<td>";
-    echo($row[$field]);
+
+    // URI reference vs Literal
+    if (wpsparql_is_valid_url($row[$field])){
+      print("<a href=$row[$field]><i class=\"fa fa-link\" aria-hidden=\"true\"></i></a>");
+    }else{
+      print($row[$field]);
+    }
+
     print"</td>";
   }
   print "</tr>";
