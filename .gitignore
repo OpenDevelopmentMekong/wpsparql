@@ -16,3 +16,4 @@ wp-content/plugins/hello.php
 /license.txt
 .remote-sync.json
 **/vendor/
+**.mo
