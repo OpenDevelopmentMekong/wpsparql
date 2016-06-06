@@ -3,7 +3,7 @@ Contributors: acorbi
 Donate link:
 Tags: sparql, api, datasets, linked open data
 Requires at least: 3.0.1
-Tested up to: 4.5
+Tested up to: 4.5.2
 Stable tag: trunk
 License: LGPLv3 / copyright (c) 2014-2015 East-West Management Institute, Inc. (EWMI).
 License URI: http://www.gnu.org/licenses/lgpl-3.0.html
