@@ -3,7 +3,7 @@
  * Plugin Name: wpsparql
  * Plugin URI: http://www.lifeformapps.com/portfolio/wpsparql/
  * Description: A wordpress plugin for querying data from an SPARQL endpoint into WP http://wordpress.org/.
- * Version: 0.9.0
+ * Version: 0.9.1
  * Author: Alex Corbi (mail@lifeformapps.com)
  * Author URI: http://www.lifeformapps.com
  * License: LGPLv3.
@@ -29,6 +29,13 @@ if (!class_exists('wpsparql')) {
             add_action('save_post', array(&$this, 'wpsparql_save_post'));
             add_action('widgets_init', create_function('', 'register_widget("Wpsparql_Query_Endpoint_Widget");'));
             add_shortcode('wpsparql_query_endpoint', array(&$this, 'wpsparql_do_shortcode_query_datasets'));
+            add_action('admin_notices', array($this, 'check_requirements'));
+        }
+
+        function check_requirements(){
+          if (!wpsparql_validate_settings_read()):
+            echo '<div class="error"><p>WPSPARQL: Endpoint seems to be unresponsive or missconfigured, please check.</p></div>';
+          endif;
         }
 
         public function wpsparql_register_plugin_styles($hook)
