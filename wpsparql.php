@@ -75,7 +75,7 @@ if (!class_exists('wpsparql')) {
           }
 
           // Check the user's permissions.
-          if ('page' == $_POST['post_type']) {
+          if (isset($_POST['post_type']) && 'page' == $_POST['post_type']) {
               if (!current_user_can('edit_page', $post_ID)) {
                   return $post_ID;
               }
