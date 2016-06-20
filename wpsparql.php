@@ -9,7 +9,7 @@
  * License: LGPLv3.
  */
  require 'vendor/autoload.php';
- include_once plugin_dir_path(__FILE__).'utils/query-endpoint-widget.php';
+ include_once plugin_dir_path(__FILE__).'widgets/query-endpoint-widget.php';
  include_once plugin_dir_path(__FILE__).'utils/wpsparql_exceptions.php';
  include_once plugin_dir_path(__FILE__).'utils/wpsparql_utils.php';
  include_once plugin_dir_path(__FILE__).'utils/wpsparql_api.php';

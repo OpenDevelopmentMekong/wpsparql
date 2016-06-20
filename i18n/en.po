@@ -68,15 +68,15 @@ msgstr ""
 msgid "Path where logs are going to be stored. Mind permissions."
 msgstr ""
 
-#: utils/query-endpoint-widget.php:12 utils/query-endpoint-widget.php:50
+#: widgets/query-endpoint-widget.php:12 widgets/query-endpoint-widget.php:50
 msgid "WPSPARQL query endpoint"
 msgstr ""
 
-#: utils/query-endpoint-widget.php:13
+#: widgets/query-endpoint-widget.php:13
 msgid "Query a sparql endpoint and displays results in a post or page."
 msgstr ""
 
-#: utils/query-endpoint-widget.php:54
+#: widgets/query-endpoint-widget.php:54
 msgid "Query:"
 msgstr ""
 
