@@ -24,7 +24,7 @@ class Wpsparql_Query_Endpoint_Widget extends WP_Widget {
 
   global $post;
 
-   $shortcode = '[wpsparql_query_endpoint query="' . $instance['query'] . '"]';
+   $shortcode = '[wpsparql_query_endpoint query=\'' . $instance['query'] . '\']';
 
    $output = do_shortcode($shortcode);
 
