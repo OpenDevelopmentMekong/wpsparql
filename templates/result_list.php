@@ -19,7 +19,7 @@ foreach( $data as $row )
 
     // URI reference vs Literal
     if (wpsparql_is_valid_url($row[$field])){
-      print("<a href=$row[$field]><i class=\"fa fa-link\" aria-hidden=\"true\"></i></a>");
+      print("<a target=\"_blank\" href=$row[$field]><i class=\"fa fa-link\" aria-hidden=\"true\"></i></a>");
     }else{
       print($row[$field]);
     }
