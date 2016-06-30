@@ -22,7 +22,7 @@
           <tr valign="top">
               <th scope="row"><label for="wpsparql_setting_sparql_url"><?php _e('Sparql endpoint url', 'wpsparql') ?></label></th>
               <td>
-                <input type="text" name="wpsparql_setting_sparql_url" id="wpsparql_setting_sparql_url" value="<?php echo $sparql_url ?>"/>
+                <input class="full-width" type="text" name="wpsparql_setting_sparql_url" id="wpsparql_setting_sparql_url" value="<?php echo $sparql_url ?>"/>
                 <p class="description"><?php _e('Specify protocol such as http:// or https://.', 'wpsparql') ?>.</p>
               </td>
           </tr>
