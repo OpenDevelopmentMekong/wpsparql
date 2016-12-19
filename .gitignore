@@ -15,5 +15,6 @@ wp-content/plugins/hello.php
 /readme.html
 /license.txt
 .remote-sync.json
+composer.lock
 **/vendor/
 **.mo

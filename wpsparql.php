@@ -27,7 +27,6 @@ if (!class_exists('wpsparql')) {
             add_action('admin_enqueue_scripts', array(&$this, 'wpsparql_register_plugin_styles'));
             add_action('edit_post', array(&$this, 'wpsparql_edit_post'));
             add_action('save_post', array(&$this, 'wpsparql_save_post'));
-            add_action('widgets_init', create_function('', 'register_widget("Wpsparql_Query_Endpoint_Widget");'));
             add_shortcode('wpsparql_query_endpoint', array(&$this, 'wpsparql_do_shortcode_query_datasets'));
             add_action('admin_notices', array($this, 'check_requirements'));
         }

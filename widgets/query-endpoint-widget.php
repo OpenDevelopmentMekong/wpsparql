@@ -77,3 +77,5 @@ class Wpsparql_Query_Endpoint_Widget extends WP_Widget {
   return $instance;
  }
 }
+
+add_action('widgets_init', create_function('', 'register_widget("Wpsparql_Query_Endpoint_Widget");'));
