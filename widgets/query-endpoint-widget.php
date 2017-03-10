@@ -32,7 +32,7 @@ class Wpsparql_Query_Endpoint_Widget extends WP_Widget {
 
      echo $args['before_widget'];
      if ( ! empty( $instance['title'] ) ) {
-      echo $args['before_title'] . apply_filters( 'widget_title', __( $instance['title'], 'wpckan')). $args['after_title'];
+      echo $args['before_title'] . apply_filters( 'widget_title', __( $instance['title'], 'wpsparql')). $args['after_title'];
      }
 
      echo $output;
