@@ -62,12 +62,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/byjg/PHP-SPARQL-Lib.git",
-                "reference": "ba4db2e62b479ec8c64d48653101bb1c55af931d"
+                "reference": "a3dc610eacea271e16b6085e41400e2d623171d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byjg/PHP-SPARQL-Lib/zipball/ba4db2e62b479ec8c64d48653101bb1c55af931d",
-                "reference": "ba4db2e62b479ec8c64d48653101bb1c55af931d",
+                "url": "https://api.github.com/repos/byjg/PHP-SPARQL-Lib/zipball/a3dc610eacea271e16b6085e41400e2d623171d7",
+                "reference": "a3dc610eacea271e16b6085e41400e2d623171d7",
                 "shasum": ""
             },
             "require": {
@@ -76,7 +76,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "SparQL\\": "SparQL/"
+                    "SparQL\\": "src/"
                 }
             },
             "license": [
@@ -94,9 +94,9 @@
             ],
             "description": "Simple library to query SPARQL from PHP",
             "support": {
-                "source": "https://github.com/byjg/PHP-SPARQL-Lib/tree/master"
+                "source": "https://github.com/byjg/PHP-SPARQL-Lib/tree/1.0.4"
             },
-            "time": "2016-05-18 19:13:39"
+            "time": "2016-06-07 18:26:49"
         },
         {
             "name": "byjg/webrequest",

@@ -18,32 +18,32 @@
         ?>
 
         <table class="form-table">
-          <th scope="row"><label><h3><?php _e('Connecting to SPARQL endpoint', 'wpsparql') ?></h3></label></th>
+          <th scope="row"><label><h3><?php _e('Connecting to SPARQL endpoint', 'odi') ?></h3></label></th>
           <tr valign="top">
-              <th scope="row"><label for="wpsparql_setting_sparql_url"><?php _e('Sparql endpoint url', 'wpsparql') ?></label></th>
+              <th scope="row"><label for="wpsparql_setting_sparql_url"><?php _e('Sparql endpoint url', 'odi') ?></label></th>
               <td>
                 <input class="full-width" type="text" name="wpsparql_setting_sparql_url" id="wpsparql_setting_sparql_url" value="<?php echo $sparql_url ?>"/>
-                <p class="description"><?php _e('Specify protocol such as http:// or https://.', 'wpsparql') ?>.</p>
+                <p class="description"><?php _e('Specify protocol such as http:// or https://.', 'odi') ?>.</p>
               </td>
           </tr>
           <!-- Connection status -->
           <tr valign="top">
-            <th scope="row"><label><?php _e('Connection status', 'wpsparql') ?></label></th>
+            <th scope="row"><label><?php _e('Connection status', 'odi') ?></label></th>
             <td>
               <?php if ($valid_connection_read) {
     ?>
-                <p class="ok"><?php _e('Sparql endpoint URL specified correctly.', 'wpsparql') ?></p>
+                <p class="ok"><?php _e('Sparql endpoint URL specified correctly.', 'odi') ?></p>
               <?php
 } else {
     ?>
-                <p class="error"><?php _e('Problem connecting to Sparql endpoint. Please, check the specified URL.', 'wpsparql') ?></p>
+                <p class="error"><?php _e('Problem connecting to Sparql endpoint. Please, check the specified URL.', 'odi') ?></p>
               <?php
 } ?>
             </td>
           </tr>
           <!-- Supported namespaces -->
           <tr valign="top">
-            <th scope="row"><label for="settings_supported_namespaces"><?php _e('Supported namespaces', 'wpsparql') ?></label></th>
+            <th scope="row"><label for="settings_supported_namespaces"><?php _e('Supported namespaces', 'odi') ?></label></th>
             <td>
               <ul id="supported_namespaces_list">
               </ul>
@@ -61,7 +61,7 @@
           </tr>
           <!-- Related datasets -->
           <tr valign="top">
-            <th scope="row"><label for="settings_supported_post_types"><?php _e('Supported post types', 'wpsparql') ?></label></th>
+            <th scope="row"><label for="settings_supported_post_types"><?php _e('Supported post types', 'odi') ?></label></th>
             <td>
              <?php
               foreach (get_post_types() as $post_type) {
@@ -76,9 +76,9 @@
            </td>
           </tr>
           <!-- Logging -->
-          <th scope="row"><label><h3><?php _e('Logging', 'wpsparql') ?></h3></label></th>
+          <th scope="row"><label><h3><?php _e('Logging', 'odi') ?></h3></label></th>
           <tr valign="top">
-            <th scope="row"><label for="wpsparql_setting_log_enabled"><?php _e('Enable log', 'wpsparql') ?></label></th>
+            <th scope="row"><label for="wpsparql_setting_log_enabled"><?php _e('Enable log', 'odi') ?></label></th>
             <td>
               <input type="checkbox" name="wpsparql_setting_log_enabled" id="wpsparql_setting_log_enabled" <?php if ($logging_enabled) {
     echo 'checked="true"';
@@ -86,10 +86,10 @@
             </td>
           </tr>
           <tr valign="top">
-            <th scope="row"><label for="wpsparql_setting_log_path"><?php _e('Path', 'wpsparql') ?></label></th>
+            <th scope="row"><label for="wpsparql_setting_log_path"><?php _e('Path', 'odi') ?></label></th>
             <td>
               <input type="text" name="wpsparql_setting_log_path" id="wpsparql_setting_log_path" value="<?php echo $logging_path ?>"/>
-              <p class="description"><?php _e('Path where logs are going to be stored. Mind permissions.', 'wpsparql') ?></p>
+              <p class="description"><?php _e('Path where logs are going to be stored. Mind permissions.', 'odi') ?></p>
             </td>
           </tr>
         </table>

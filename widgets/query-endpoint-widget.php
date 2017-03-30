@@ -9,8 +9,8 @@ class Wpsparql_Query_Endpoint_Widget extends WP_Widget {
   // widget actual processes
   parent::__construct(
    'wpsparql_query_endpoint_widget',
-   __('WPSPARQL query endpoint', 'wpsparql'),
-   array('description' => __('Query a sparql endpoint and displays results in a post or page.', 'wpsparql'))
+   __('WPSPARQL query endpoint', 'odi'),
+   array('description' => __('Query a sparql endpoint and displays results in a post or page.', 'odi'))
   );
  }
 
@@ -32,7 +32,7 @@ class Wpsparql_Query_Endpoint_Widget extends WP_Widget {
 
      echo $args['before_widget'];
      if ( ! empty( $instance['title'] ) ) {
-      echo $args['before_title'] . apply_filters( 'widget_title', __( $instance['title'], 'wpsparql')). $args['after_title'];
+      echo $args['before_title'] . apply_filters( 'widget_title', __( $instance['title'], 'odi')). $args['after_title'];
      }
 
      echo $output;
@@ -50,7 +50,7 @@ class Wpsparql_Query_Endpoint_Widget extends WP_Widget {
   */
  public function form( $instance ) {
   // outputs the options form on admin
-  $title = ! empty( $instance['title'] ) ? __( $instance['title'], 'wpsparql') : __( 'WPSPARQL query endpoint', 'wpsparql' );
+  $title = ! empty( $instance['title'] ) ? __( $instance['title'], 'odi') : __( 'WPSPARQL query endpoint', 'odi' );
   $query = ! empty( $instance['query'] ) ? $instance['query']: "";
   ?>
   <p>
