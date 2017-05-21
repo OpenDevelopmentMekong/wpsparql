@@ -30,3 +30,8 @@
 .tt-dataset{
   border-bottom: 1px solid #666;
 }
+
+.wpsparql_more_url{
+  float: right;
+  margin-top: 20px;
+}

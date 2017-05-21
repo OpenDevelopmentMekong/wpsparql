@@ -79,6 +79,11 @@ This feature also exposes a widget for integrating the results of queries easily
 
 * https://github.com/byjg/PHP-SPARQL-Lib.git
 
+# Is used on
+
+* http://www.suelourbano.org/bibliotecas/
+* https://opendevelopmentmekong.net/topics/land
+
 # Copyright and License
 
 This material is copyright (c) 2014-2015 East-West Management Institute, Inc. (EWMI).
