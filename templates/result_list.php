@@ -33,7 +33,7 @@ print "</table>";
 if (array_key_exists("more_url",$atts) && !empty($atts["more_url"])):
   $url = $atts["more_url"];
   print "<div class=\"wpsparql_more_url\">";
-  print "<a target=\"_blank\" href=$url></a>";
+  print "<a target=\"_blank\" href=$url>More...</a>";
   print "</div>";
 endif;
 
