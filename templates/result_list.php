@@ -29,4 +29,11 @@ foreach( $data as $row )
   print "</tr>";
 }
 print "</table>";
+
+$url = $atts["more_url"];
+if ($url):
+  print "<div class=\"wpsparql_more_url\">";
+  print "<a target=\"_blank\" href=$url></a>";
+  print "</div>";
+endif;
 ?>
