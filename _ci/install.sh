@@ -6,6 +6,7 @@ sudo apt-get install -q -y python-software-properties
 sudo apt-add-repository -y ppa:ansible/ansible
 sudo apt-get update -q
 sudo apt-get install -q -y ansible
+sudo apt-get install -q -y php5-curl
 
 echo "Install php dependencies"
 composer install
