@@ -49,8 +49,7 @@
     $db = new SparQL\Connection($endpoint);
     wpsparql_log($endpoint);
     try{
-      $alive = $db->alive(1000);
-      wpsparql_log("alive " + $alive);
+      $db->alive(1000);
     }catch(Exception $e){
       wpsparql_log($e->getMessage());
       $alive = false;
