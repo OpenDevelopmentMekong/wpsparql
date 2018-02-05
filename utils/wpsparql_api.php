@@ -1,7 +1,7 @@
 <?php
 
   include_once plugin_dir_path( __FILE__ ) . 'wpsparql_utils.php' ;
-  use BorderCloud\SPARQL\SparqlClient;
+
   require_once dirname(dirname(__FILE__)) . '/vendor/autoload.php';
 
   /*
@@ -20,18 +20,19 @@
       wpsparql_api_call_error("wpsparql_api_query_datasets",null);
 
     $endpoint = get_option('wpsparql_setting_sparql_url');
-    $sc = new SparqlClient();
-    $sc->setEndpointRead($endpoint);
+    $guzzle = new GuzzleHttp\Client();
+    $client = new CCR\Sparql\SparqlClient($guzzle);
+    $client = $client->withEndpoint($endpoint);
 
     $supported_namespaces = json_decode(get_option('wpsparql_supported_namespaces'),true);
 
-    /*foreach ($supported_namespaces as $namespace) {
-      $db->ns( $namespace["prefix"],$namespace["iri"] );
-    }*/
+    foreach ($supported_namespaces as $namespace) {
+      $client->withPrefix( $namespace["prefix"],$namespace["iri"] );
+    }
 
     $fields = null;
     try{
-      $result = $sc->query($atts['query'], 'rows');
+      $result = $client->query($atts['query']);
       $fields = $rows["result"]["rows"];
     }catch(Exception $e){
       wpsparql_log($e->getMessage());
@@ -44,13 +45,14 @@
   function wpsparql_api_ping() {
 
     $endpoint = get_option('wpsparql_setting_sparql_url');
-
     // Connecting to invalid endpoint should fail
     $alive = true;
-    $sc = new SparqlClient();
-    $sc->setEndpointRead($endpoint);
+
+    $guzzle = new GuzzleHttp\Client();
+    $client = new CCR\Sparql\SparqlClient($guzzle);
+    $client = $client->withEndpoint($endpoint);
     try{
-      if (false === $sc->query("select * where {?x ?y ?z.} LIMIT 5")):
+      if (false === $client->query("select * where {?x ?y ?z.} LIMIT 5")):
         throw new Exception('Alive returned false');
       endif;
     }catch(Exception $e){

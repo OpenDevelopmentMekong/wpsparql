@@ -6,6 +6,7 @@
     "analog/analog": "dev-master",
     "byjg/sparqllib": "1.0.5",
     "FortAwesome/Font-Awesome": "*",
-    "bordercloud/sparql": "^2.0"
+    "bordercloud/sparql": "^2.0",
+    "ubccr/ralph": "^0.1.0"
   }
 }
