@@ -1,7 +1,7 @@
 <?php
 
   include_once plugin_dir_path( __FILE__ ) . 'wpsparql_utils.php' ;
-
+  use BorderCloud\SPARQL\SparqlClient;
   require_once dirname(dirname(__FILE__)) . '/vendor/autoload.php';
 
   /*
@@ -20,18 +20,19 @@
       wpsparql_api_call_error("wpsparql_api_query_datasets",null);
 
     $endpoint = get_option('wpsparql_setting_sparql_url');
-    $db = new SparQL\Connection($endpoint);
+    $sc = new SparqlClient();
+    $sc->setEndpointRead($endpoint);
 
     $supported_namespaces = json_decode(get_option('wpsparql_supported_namespaces'),true);
 
-    foreach ($supported_namespaces as $namespace) {
+    /*foreach ($supported_namespaces as $namespace) {
       $db->ns( $namespace["prefix"],$namespace["iri"] );
-    }
+    }*/
 
     $fields = null;
     try{
-      $result = $db->query($atts['query']);
-      $fields = $result->fetchAll();
+      $result = $sc->query($atts['query'], 'rows');
+      $fields = $rows["result"]["rows"];
     }catch(Exception $e){
       wpsparql_log($e->getMessage());
     }
@@ -46,10 +47,10 @@
 
     // Connecting to invalid endpoint should fail
     $alive = true;
-    $db = new SparQL\Connection($endpoint);
-    wpsparql_log($endpoint);
+    $sc = new SparqlClient();
+    $sc->setEndpointRead($endpoint);
     try{
-      if (false === $db->alive(1000)):
+      if (false === $sc->query("select * where {?x ?y ?z.} LIMIT 5")):
         throw new Exception('Alive returned false');
       endif;
     }catch(Exception $e){

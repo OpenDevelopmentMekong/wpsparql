@@ -5,6 +5,7 @@
   "require": {
     "analog/analog": "dev-master",
     "byjg/sparqllib": "1.0.5",
-    "FortAwesome/Font-Awesome": "*"
+    "FortAwesome/Font-Awesome": "*",
+    "bordercloud/sparql": "^2.0"
   }
 }
