@@ -33,7 +33,7 @@
     $fields = null;
     try{
       $result = $client->query($atts['query']);
-      $fields = $rows["result"]["rows"];
+      $fields = $result["result"]["rows"];
     }catch(Exception $e){
       wpsparql_log($e->getMessage());
     }
@@ -52,7 +52,7 @@
     $client = new CCR\Sparql\SparqlClient($guzzle);
     $client = $client->withEndpoint($endpoint);
     try{
-      if (false === $client->query(urldecode('select * where {?x ?y ?z.} LIMIT 5'))):
+      if (false === $client->query('select * where {?x ?y ?z.} LIMIT 5')):
         throw new Exception('Alive returned false');
       endif;
     }catch(Exception $e){
