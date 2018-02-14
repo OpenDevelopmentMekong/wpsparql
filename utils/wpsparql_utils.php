@@ -46,6 +46,8 @@
       wpsparql_log($e->getMessage());
     }
 
+    wpsparql_log($result);
+
     return wpsparql_output_template( plugin_dir_path( __FILE__ ) . '../templates/result_list.php',$result,$atts);
   }
 
