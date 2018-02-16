@@ -1,0 +1,92 @@
+# Translators:
+# Alex Corbi <a.corbi@gmail.com>, 2017
+# thetaung2 <thetaung@phandeeyar.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: wpckan\n"
+"POT-Creation-Date: 2016-06-06 17:18+0200\n"
+"PO-Revision-Date: 2016-06-06 17:18+0200\n"
+"Last-Translator: thetaung2 <thetaung@phandeeyar.org>, 2017\n"
+"Language-Team: Burmese (https://www.transifex.com/open-development-mekong/teams/27158/my/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: my\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-SearchPath-0: i18n\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: components\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: templates/settings.php:21
+msgid "Connecting to SPARQL endpoint"
+msgstr "SPARQL endpoint နှင့်ချိတ်ဆက်နေသည်"
+
+#: templates/settings.php:23
+msgid "Sparql endpoint url"
+msgstr "Sparql endpoint url"
+
+#: templates/settings.php:26
+msgid "Specify protocol such as http:// or https://."
+msgstr "http:// သို့မဟုတ် https:// ဖြစ်သည် စသဖြင့် protocol ကိုတိကျစွာပြောပါ"
+
+#: templates/settings.php:31
+msgid "Connection status"
+msgstr "ချိတ်ဆက်မှု အခြေအနေ"
+
+#: templates/settings.php:35
+msgid "Sparql endpoint URL specified correctly."
+msgstr "Sparql endpoint URL တိကျမှန်ကန်သည်။"
+
+#: templates/settings.php:39
+msgid ""
+"Problem connecting to Sparql endpoint. Please, check the specified URL."
+msgstr "Sparql endpoint နှင့် ချိတ်ဆက်ရာတွင် ပြသနာရှိသည်။ URL ကိုစစ်ဆေးပါ။"
+
+#: templates/settings.php:46
+msgid "Supported namespaces"
+msgstr "Supported namespaces"
+
+#: templates/settings.php:64
+msgid "Supported post types"
+msgstr "Supported post types"
+
+#: templates/settings.php:79
+msgid "Logging"
+msgstr "အကောင့်ဝင်ခြင်း"
+
+#: templates/settings.php:81
+msgid "Enable log"
+msgstr "ဝင်ရောက်နိုင်ရန် ဖွင့်မည်။"
+
+#: templates/settings.php:89
+msgid "Path"
+msgstr "လမ်းကြောင်း"
+
+#: templates/settings.php:92
+msgid "Path where logs are going to be stored. Mind permissions."
+msgstr ""
+"သိမ်းဆည်မည့် ဝင်ရောက်မှုများကို လမ်းကြောင်းပြပါ။ ခွင့်ပြုချက်များကို "
+"သတိပြုပါ။ "
+
+#: widgets/query-endpoint-widget.php:12 widgets/query-endpoint-widget.php:50
+msgid "WPSPARQL query endpoint"
+msgstr "WPSPARQL query endpoint"
+
+#: widgets/query-endpoint-widget.php:13
+msgid "Query a sparql endpoint and displays results in a post or page."
+msgstr ""
+"sparql endpoint ကို ရှာဖွေပြီး အဖြေများကို post သို့မဟုတ် စာမျက်နှာတွင် "
+"ဖော်ပြသည်။ "
+
+#: widgets/query-endpoint-widget.php:54
+msgid "Query:"
+msgstr "စုံစမ်းသည်:"
+
+#: wpsparql.php:140
+msgid "You do not have sufficient permissions to access this page."
+msgstr "ဤစာမျက်နှာကို ဝင်ရောက်ရန်ခွင့်ပြုချက် သင့်တွင်မရှိပါ"

@@ -1,0 +1,85 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: wpckan\n"
+"POT-Creation-Date: 2016-06-06 17:18+0200\n"
+"PO-Revision-Date: 2016-06-06 17:18+0200\n"
+"Language-Team: Vietnamese (https://www.transifex.com/open-development-mekong/teams/27158/vi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-SearchPath-0: i18n\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: components\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: templates/settings.php:21
+msgid "Connecting to SPARQL endpoint"
+msgstr ""
+
+#: templates/settings.php:23
+msgid "Sparql endpoint url"
+msgstr ""
+
+#: templates/settings.php:26
+msgid "Specify protocol such as http:// or https://."
+msgstr ""
+
+#: templates/settings.php:31
+msgid "Connection status"
+msgstr ""
+
+#: templates/settings.php:35
+msgid "Sparql endpoint URL specified correctly."
+msgstr ""
+
+#: templates/settings.php:39
+msgid ""
+"Problem connecting to Sparql endpoint. Please, check the specified URL."
+msgstr ""
+
+#: templates/settings.php:46
+msgid "Supported namespaces"
+msgstr ""
+
+#: templates/settings.php:64
+msgid "Supported post types"
+msgstr ""
+
+#: templates/settings.php:79
+msgid "Logging"
+msgstr ""
+
+#: templates/settings.php:81
+msgid "Enable log"
+msgstr ""
+
+#: templates/settings.php:89
+msgid "Path"
+msgstr ""
+
+#: templates/settings.php:92
+msgid "Path where logs are going to be stored. Mind permissions."
+msgstr ""
+
+#: widgets/query-endpoint-widget.php:12 widgets/query-endpoint-widget.php:50
+msgid "WPSPARQL query endpoint"
+msgstr ""
+
+#: widgets/query-endpoint-widget.php:13
+msgid "Query a sparql endpoint and displays results in a post or page."
+msgstr ""
+
+#: widgets/query-endpoint-widget.php:54
+msgid "Query:"
+msgstr ""
+
+#: wpsparql.php:140
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
