@@ -20,20 +20,18 @@
       wpsparql_api_call_error("wpsparql_api_query_datasets",null);
 
     $endpoint = get_option('wpsparql_setting_sparql_url');
-    $guzzle = new GuzzleHttp\Client();
-    $client = new CCR\Sparql\SparqlClient($guzzle);
-    $client = $client->withEndpoint($endpoint);
+    $db = new SparQL\Connection($endpoint);
 
     $supported_namespaces = json_decode(get_option('wpsparql_supported_namespaces'),true);
 
     foreach ($supported_namespaces as $namespace) {
-      $client->withPrefix( $namespace["prefix"],$namespace["iri"] );
+      $db->ns( $namespace["prefix"],$namespace["iri"] );
     }
 
     $fields = null;
     try{
-      $result = $client->query($atts['query']);
-      $fields = $result["result"]["rows"];
+      $result = $db->query($atts['query']);
+      $fields = $result->fetchAll();
     }catch(Exception $e){
       wpsparql_log($e->getMessage());
     }
@@ -45,16 +43,13 @@
   function wpsparql_api_ping() {
 
     $endpoint = get_option('wpsparql_setting_sparql_url');
+
     // Connecting to invalid endpoint should fail
     $alive = true;
-
-    $guzzle = new GuzzleHttp\Client();
-    $client = new CCR\Sparql\SparqlClient($guzzle);
-    $client = $client->withEndpoint($endpoint);
+    $db = new SparQL\Connection($endpoint);
+    wpsparql_log($endpoint);
     try{
-      if (false === $client->query('select * where {?x ?y ?z.} LIMIT 5')):
-        throw new Exception('Alive returned false');
-      endif;
+      $alive = $db->alive(1000);
     }catch(Exception $e){
       wpsparql_log($e->getMessage());
       $alive = false;
