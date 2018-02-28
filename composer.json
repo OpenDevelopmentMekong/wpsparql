@@ -10,7 +10,7 @@
   ],
   "require": {
     "analog/analog": "dev-master",
-    "byjg/sparqllib": "*",
+    "OpenDevelopmentMekong/sparqllib": "*",
     "FortAwesome/Font-Awesome": "*"
   }
 }
