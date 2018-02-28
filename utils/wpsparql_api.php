@@ -34,7 +34,7 @@
       wpsparql_log($result);
       $fields = $result->fetchAll();
     }catch(Exception $e){
-      wpsparql_log($e->getMessage());
+      wpsparql_log("Error running query" . $e->getMessage());
     }
 
     return $fields;
