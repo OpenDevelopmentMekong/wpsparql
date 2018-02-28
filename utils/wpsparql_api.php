@@ -31,6 +31,7 @@
     $fields = null;
     try{
       $result = $db->query($atts['query']);
+      wpsparql_log($result);
       $fields = $result->fetchAll();
     }catch(Exception $e){
       wpsparql_log($e->getMessage());
