@@ -50,8 +50,7 @@
     $db = new SparQL\Connection($endpoint);
 
     try{
-      $alive = $db->alive(1000);
-      wpsparql_log("Sparql endpoint pinged successfully");
+      $alive = $db->alive(1000);      
     }catch(Exception $e){
       wpsparql_log("Error while pinging the sparql endpoint: " . $e->getMessage());
       $alive = false;
