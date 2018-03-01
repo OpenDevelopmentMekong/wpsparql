@@ -46,6 +46,8 @@
     $endpoint = get_option('wpsparql_setting_sparql_url');
     $query = urlencode("SELECT * WHERE { ?s ?p ?o } LIMIT 1");
 
+    wpsparql_log("Running query: " . $endpoint . '?query=' .  $query . '&format=json');
+
     $curl = curl_init();
     curl_setopt_array($curl, array(
       CURLOPT_RETURNTRANSFER => 1,
