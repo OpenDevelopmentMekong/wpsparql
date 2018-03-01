@@ -52,7 +52,7 @@
 
     $result = null;
     try{
-      $result = $client->query("SELECT * WHERE { ?s ?p ?o } LIMIT 1");
+      $result = $client->query(urlencode("SELECT * WHERE { ?s ?p ?o } LIMIT 1"));
     }catch(Exception $e){
       wpsparql_log("Error running query" . $e->getMessage());
     }
