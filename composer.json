@@ -5,12 +5,12 @@
   "repositories": [
       {
           "type": "vcs",
-          "url": "https://github.com/OpenDevelopmentMekong/PHP-SPARQL-Lib"
+          "url": "https://github.com/OpenDevelopmentMekong/ralph.git"
       }
   ],
   "require": {
     "analog/analog": "dev-master",
-    "OpenDevelopmentMekong/sparqllib": "dev-master",
+    "opendevelopmentmekong/ralph": "dev-master",
     "FortAwesome/Font-Awesome": "*"
   }
 }
