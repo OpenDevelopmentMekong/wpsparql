@@ -44,18 +44,18 @@
   function wpsparql_api_ping() {
 
     $endpoint = get_option('wpsparql_setting_sparql_url');
+    $query = "SELECT * WHERE { ?s ?p ?o } LIMIT 1";
 
-    // Connecting to invalid endpoint should fail
-    $guzzle = new GuzzleHttp\Client();
-    $client = new CCR\Sparql\SparqlClient($guzzle);
-    $client = $client->withEndpoint($endpoint);
-
-    $result = null;
-    try{
-      $result = $client->query("SELECT * WHERE { ?s ?p ?o } LIMIT 1");
-    }catch(Exception $e){
-      wpsparql_log("Error running query" . $e->getMessage());
-    }
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+      CURLOPT_RETURNTRANSFER => 1,
+      CURLOPT_URL => $endpoint . '?query=' .  $query . '&format=json',
+      CURLOPT_USERAGENT => 'wpsparql'
+    ));
+    // Send the request & save response to $resp
+    $result = curl_exec($curl);
+    // Close request to clear up some resources
+    curl_close($curl);
 
     wpsparql_log($result);
 
